@@ -33,8 +33,11 @@ let pathName = './challenge6';
 fs.readdir('./challenge6', (err, filenames) => {
     if(err) throw err;
     filenames.forEach(file => {
-        let text = fs.readFile(path.join(pathName,file), 'utf-8', (err, data) => {
-            console.log(data);
-        })
+        const splitFile = file.split('.');
+        if(splitFile[splitFile.length - 1] === 'txt') {
+            fs.readFile(path.join(pathName,file), 'utf-8', (err, data) => {
+                console.log(data);
+            })
+        }
     })
 })
