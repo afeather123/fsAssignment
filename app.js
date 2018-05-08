@@ -32,6 +32,7 @@ fs.writeFileSync('./challenge5/info.txt', text);
 let pathName = './challenge6';
 fs.readdir('./challenge6', (err, filenames) => {
     if(err) throw err;
+    console.log(files);
     filenames.forEach(file => {
         const splitFile = file.split('.');
         if(splitFile[splitFile.length - 1] === 'txt') {
